@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Список таблиц{% endblock %}
+
+{% block content %}
+<h1>Таблицы в схеме 'schedule'</h1>
+<ul class="list-group">
+    {% for table in tables %}
+    <li class="list-group-item">
+        <a href="{{ url_for('main.show_table', table_name=table) }}">{{ table }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
