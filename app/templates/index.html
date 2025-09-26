@@ -1,14 +1,28 @@
 {% extends "base.html" %}
 
-{% block title %}Список таблиц{% endblock %}
+{% block title %}Расписание занятий{% endblock %}
 
 {% block content %}
-<h1>Таблицы в схеме 'schedule'</h1>
-<ul class="list-group">
-    {% for table in tables %}
-    <li class="list-group-item">
-        <a href="{{ url_for('main.show_table', table_name=table) }}">{{ table }}</a>
-    </li>
-    {% endfor %}
-</ul>
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h1 class="text-center">Система просмотра расписания</h1>
+            </div>
+            <div class="card-body">
+                <div class="text-center mb-4">
+                    <p class="lead">Выберите действие:</p>
+                </div>
+                <div class="d-grid gap-3">
+                    <a href="{{ url_for('main.schedule') }}" class="btn btn-primary btn-lg">
+                        📅 Поиск расписания
+                    </a>
+                    <a href="{{ url_for('main.tables') }}" class="btn btn-outline-secondary btn-lg">
+                        📊 Просмотр таблиц БД
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
