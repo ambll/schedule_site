@@ -1,0 +1,101 @@
+/* Красно-черная тема */
+:root {
+    --primary-red: #dc3545;
+    --dark-red: #b02a37;
+    --black: #000000;
+    --dark-gray: #1a1a1a;
+    --light-gray: #2b2b2b;
+}
+
+body {
+    background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+    min-height: 100vh;
+}
+
+.card {
+    background-color: var(--light-gray);
+    border: 1px solid #333;
+}
+
+.card-header {
+    border-bottom: 2px solid var(--primary-red);
+}
+
+.btn-danger {
+    background: linear-gradient(45deg, var(--primary-red), var(--dark-red));
+    border: none;
+}
+
+.btn-danger:hover {
+    background: linear-gradient(45deg, var(--dark-red), var(--primary-red));
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
+}
+
+.table {
+    color: #fff;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.table-hover > tbody > tr:hover {
+    background-color: rgba(220, 53, 69, 0.1);
+}
+
+.form-control, .form-select {
+    background-color: var(--dark-gray);
+    border: 1px solid #444;
+    color: #fff;
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: var(--dark-gray);
+    border-color: var(--primary-red);
+    color: #fff;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.dropdown-menu-dark {
+    background-color: var(--dark-gray);
+    border: 1px solid #444;
+}
+
+.dropdown-item:hover {
+    background-color: var(--primary-red);
+}
+
+/* Анимации */
+.card {
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+/* Кастомные стили для таблицы расписания */
+.schedule-table th {
+    background-color: var(--primary-red);
+    border-color: var(--dark-red);
+}
+
+/* Стили для успешных сообщений */
+.alert-success {
+    background-color: rgba(25, 135, 84, 0.2);
+    border-color: #198754;
+    color: #d1e7dd;
+}
+
+/* Стили для ошибок */
+.alert-danger {
+    background-color: rgba(220, 53, 69, 0.2);
+    border-color: var(--primary-red);
+    color: #f8d7da;
+}

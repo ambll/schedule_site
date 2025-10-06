@@ -4,22 +4,58 @@
 
 {% block content %}
 <div class="row justify-content-center">
-    <div class="col-md-8">
-        <div class="card">
-            <div class="card-header">
-                <h1 class="text-center">Система просмотра расписания</h1>
-            </div>
-            <div class="card-body">
-                <div class="text-center mb-4">
-                    <p class="lead">Выберите действие:</p>
+    <div class="col-md-10">
+        <div class="text-center mb-5">
+            <h1 class="display-4 text-danger fw-bold mb-3">Система расписания</h1>
+            <p class="lead text-light">Управление учебным расписанием в реальном времени</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card h-100 border-danger">
+                    <div class="card-body text-center">
+                        <i class="fas fa-search fa-3x text-danger mb-3"></i>
+                        <h3 class="card-title">Поиск расписания</h3>
+                        <p class="card-text">Найдите занятия по группе или преподавателю</p>
+                        <a href="{{ url_for('main.schedule') }}" class="btn btn-outline-danger btn-lg">Перейти к поиску</a>
+                    </div>
                 </div>
-                <div class="d-grid gap-3">
-                    <a href="{{ url_for('main.schedule') }}" class="btn btn-primary btn-lg">
-                        📅 Поиск расписания
-                    </a>
-                    <a href="{{ url_for('main.tables') }}" class="btn btn-outline-secondary btn-lg">
-                        📊 Просмотр таблиц БД
-                    </a>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card h-100 border-danger">
+                    <div class="card-body text-center">
+                        <i class="fas fa-plus-circle fa-3x text-danger mb-3"></i>
+                        <h3 class="card-title">Добавить данные</h3>
+                        <p class="card-text">Добавьте новые занятия, группы, преподавателей</p>
+                        <div class="btn-group-vertical w-100">
+                            <a href="{{ url_for('main.add_lesson') }}" class="btn btn-outline-danger">Добавить занятие</a>
+                            <a href="{{ url_for('main.add_group') }}" class="btn btn-outline-danger mt-2">Добавить группу</a>
+                            <a href="{{ url_for('main.add_teacher') }}" class="btn btn-outline-danger mt-2">Добавить преподавателя</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card h-100 border-danger">
+                    <div class="card-body text-center">
+                        <i class="fas fa-database fa-3x text-danger mb-3"></i>
+                        <h3 class="card-title">База данных</h3>
+                        <p class="card-text">Просмотр и управление таблицами базы данных</p>
+                        <a href="{{ url_for('main.tables') }}" class="btn btn-outline-danger btn-lg">Просмотр таблиц</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card h-100 border-danger">
+                    <div class="card-body text-center">
+                        <i class="fas fa-chart-bar fa-3x text-danger mb-3"></i>
+                        <h3 class="card-title">Статистика</h3>
+                        <p class="card-text">Просмотр статистики по занятиям и преподавателям</p>
+                        <a href="{{ url_for('main.schedule') }}" class="btn btn-outline-danger btn-lg">Посмотреть статистику</a>
+                    </div>
                 </div>
             </div>
         </div>
